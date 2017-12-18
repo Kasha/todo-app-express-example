@@ -1,0 +1,36 @@
+<html>
+    <head> 
+    <title> מנהל משימות</title>
+     <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet">
+     <link href="/styles.css" rel="stylesheet">
+    </head>
+    
+    <body>
+    <div class="container" dir="rtl">
+    <h2> מנהל משימות </h2>
+    
+    <form action ="/addtask" method="POST">
+    
+    <input type="text" name="newtask" placeholder="משימה חדשה">
+    <button> משימה חדשה </button>
+    
+    
+    <h2> משימות פתוחות </h2>
+    <ul>
+    <% for( var i = 0; i < task.length; i++){ %>
+        <li><input type="checkbox" name="check" value="<%= task[i] %>" /> <%= task[i] %> </li>
+    <% } %>
+    </ul>
+    <button formaction="/removetask" type="submit" id="top"> סיים משימה </button>
+    </form>
+    
+    <h2> משימות שהושלמו </h2>
+    <ul>
+     <% for(var i = 0; i < complete.length; i++){ %>
+        <li><input type="checkbox" checked><%= complete[i] %> </li>
+    <% } %>
+    </ul>
+    </div>
+    
+    </body>
+    </html>
